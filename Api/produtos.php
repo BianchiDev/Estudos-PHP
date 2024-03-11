@@ -21,14 +21,23 @@ function postProduto($dados)
     $insert = "INSERT INTO produto(titulo, descricao, valor) VALUES(:titulo, :descricao, :valor)"; // Consulta SQL para inserir um novo produto
     
     try {
-        $stmt = $conexao->prepare($insert); // Prepara a consulta
+        // Verifica se o valor é numérico
+        if (!is_numeric($dados['valor'])) {
+            throw new Exception("Valor não é suportado: " . $dados['valor']);
+        }
+
+        // Prepara a consulta
+        $stmt = $conexao->prepare($insert);
+        
+        // Executa a consulta com os valores fornecidos
         $stmt->execute([
             ':titulo' => $dados['titulo'],
             ':descricao' => $dados['descricao'],
             ':valor' => $dados['valor']
-        ]); // Executa a consulta com os valores fornecidos
-        
-        return $conexao->lastInsertId(); // Retorna o ID do último produto inserido
+        ]);
+
+        // Retorna o ID do último produto inserido
+        return $conexao->lastInsertId();
     } catch (PDOException $e) {
         // Captura exceções durante a inserção e lança uma nova exceção com uma mensagem mais informativa
         throw new Exception("Erro ao inserir produto: " . $e->getMessage());
