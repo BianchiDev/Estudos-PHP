@@ -1,4 +1,5 @@
 <?php
+
 // Função para obter todos os produtos do banco de dados
 function getProdutos()
 {
@@ -61,4 +62,75 @@ function buscaProduto($busca)
     }
 
     return $resultados; // Retorna os resultados da busca
+}
+
+// Função para buscar produtos que contenham uma determinada string, ignorando maiúsculas/minúsculas
+function buscaProdutos($busca)
+{
+    $produtos = getProdutos();
+    $resultados = [];
+
+    foreach ($produtos as $produto) {
+        $existe = in_array(strtolower($busca), array_map('strtolower', $produto));
+        if ($existe) {
+            array_push($resultados, $produto);
+        }
+    }
+
+    return $resultados;
+}
+
+// Função para adicionar produtos no banco de dados
+function adicionarProdutos($dados)
+{
+    $conexao = getConexao();
+
+    $insert = "INSERT INTO produto (titulo, descricao, valor) VALUES (:titulo, :descricao, :valor)";
+    $stmt = $conexao->prepare($insert);
+    $stmt->bindValue(':titulo', $dados['titulo']);
+    $stmt->bindValue(':descricao', $dados['descricao']);
+    $stmt->bindValue(':valor', $dados['valor']);
+    $stmt->execute();
+
+    return $conexao->lastInsertId();
+}
+
+// Função para buscar um produto pelo ID
+function buscaProdutoId($id)
+{
+    $conexao = getConexao();
+    $select = "SELECT * FROM produto WHERE id=:id";
+    $stmt = $conexao->prepare($select);
+    $stmt->bindValue(':id', (int)$id);
+    $stmt->execute();
+
+    return $stmt->fetch(\PDO::FETCH_ASSOC);
+}
+
+// Função para salvar as alterações em um produto
+function salvarProduto($dados)
+{
+    $conexao = getConexao();
+    $update = "UPDATE produto SET titulo=:titulo, descricao=:descricao, valor=:valor WHERE id=:id";
+    $stmt = $conexao->prepare($update);
+    $stmt->bindValue(':titulo', $dados['titulo']);
+    $stmt->bindValue(':descricao', $dados['descricao']);
+    $stmt->bindValue(':valor', $dados['valor']);
+    $stmt->bindValue(':id', (int)$dados['id']);
+
+    $ret = $stmt->execute();
+
+    return $ret;
+}
+
+// Função para deletar um produto pelo ID
+function deletarProduto($id)
+{
+    $conexao = getConexao();
+    $delete = "DELETE FROM produto WHERE id=:id";
+    $stmt = $conexao->prepare($delete);
+    $stmt->bindValue(':id', (int)$id);
+    $ret = $stmt->execute();
+
+    return $ret;
 }
