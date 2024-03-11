@@ -31,8 +31,23 @@ function getPagina()
         $produtos = buscaProduto($_GET['busca']);
         include("Pages/home.php");
         break;
-        case "/info";
+      case "/info";
         include("Pages/info.php");
+        break;
+      default:
+        $produtos = getProdutos();
+        include("Pages/home.php");
+        break;
+    }
+  }
+  if ($metodo == "POST") {
+    switch ($url) {
+      case "/produto/adicionar";
+      $msg = "Erro ao salvar o regitro!";
+        if (!postProduto($_POST)) {
+          $produtos = getProdutos();
+        include("Pages/home.php");
+        }
         break;
       default:
         $produtos = getProdutos();

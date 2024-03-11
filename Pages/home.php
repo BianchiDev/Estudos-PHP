@@ -16,3 +16,12 @@
 
 	<?php endforeach; ?>
 </ul>
+<hr>
+<h2>Adicionar produto</h2>
+<form action="/produto/adicionar" method="post">
+	<input type="text" name="titulo" placeholder="Título">
+	<input type="text" name="descricao" placeholder="Descrição">
+	<input type="text" name="valor" placeholder="Valor R$ ">
+	<button>Adiconar</button>
+
+</form>

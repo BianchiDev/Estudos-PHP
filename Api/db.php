@@ -2,7 +2,7 @@
 function getConexao()
 {
     $host = '127.0.0.1'; // No Docker, usamos 'localhost' porque a conexão é interna ao contêiner
-    $port = '3307'; // Porta mapeada do host para o contêiner MySQL
+    $port = '3306'; // Porta mapeada do host para o contêiner MySQL
     $db = 'curso_php_basico'; // Nome do seu banco de dados
     $user = 'root'; // Seu usuário MySQL
     $pass = 'Senha123'; // Sua senha MySQL
