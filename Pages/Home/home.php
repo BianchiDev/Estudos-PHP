@@ -1,8 +1,8 @@
 <main class="container">
 
     <!-- Formulário de Busca -->
-
-    <form action="busca" method="GET" class="menuBuscar">
+ <div class="menuBuscar">
+    <form action="busca" method="GET" >
         <input  type="text"
                 id="autocomplete-buscar"
                 class="autocomplete" 
@@ -10,7 +10,7 @@
                 placeholder="Busca">
         <!-- <button class="btn blue && z-depth-5">Pesquisar</button> -->
     </form>
-
+</div>
 
     <div class="card && z-depth-5">
     
