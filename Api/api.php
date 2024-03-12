@@ -22,7 +22,7 @@ function getPagina()
       case "/":
       case "/home":
         $produtos = getProdutos();
-        include("Pages/home.php");
+        include("Pages/Home/home.php");
         break;
       case "/sobre":
         include("Pages/sobre.php");
@@ -32,13 +32,13 @@ function getPagina()
         break;
       case "/busca":
         $produtos = buscaProduto($_GET['busca']);
-        include("Pages/home.php");
+        include("Pages/Home/home.php");
         break;
       case "/produto/editar":
         $produtoEdit = buscaProdutoId($_GET['id']);
         $produtos = getProdutos();
         $editando = true;
-        include("Pages/home.php");
+        include("Pages/Home/home.php");
         break;
       case "/produto/deletar":
         $produtoEdit = deletarProduto($_GET['id']);
@@ -56,7 +56,7 @@ function getPagina()
           break;
       default:
         $produtos = getProdutos();
-        include("Pages/home.php");
+        include("Pages/Home/home.php");
         break;
     }
   }
@@ -69,13 +69,13 @@ function getPagina()
         if ($msg) {
           $produtos = getProdutos();
           $produtoEdit = $_POST;
-          include("Pages/home.php");
+          include("Pages/Home/home.php");
           break;
         }
         if (!adicionarProdutos($_POST)) {
           $msg = "Erro ao salvar o registro!";
           $produtos = getProdutos();
-          include("Pages/home.php");
+          include("Pages/Home/home.php");
           break;
         }
         header('location:../');
@@ -85,20 +85,20 @@ function getPagina()
         if ($msg) {
           $produtos = getProdutos();
           $produtoEdit = $_POST;
-          include("Pages/home.php");
+          include("Pages/Home/home.php");
           break;
         }
         if (!salvarProduto($_POST)) {
           $msg = "Erro ao atualizar o registro!";
           $produtos = getProdutos();
-          include("Pages/home.php");
+          include("Pages/Home/home.php");
           break;
         }
         header('location:../');
         break;
       default:
         $produtos = getProdutos();
-        include("Pages/home.php");
+        include("Pages/Home/home.php");
         break;
     }
   }
