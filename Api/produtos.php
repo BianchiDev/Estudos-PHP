@@ -85,6 +85,11 @@ function adicionarProdutos($dados)
 {
     $conexao = getConexao();
 
+     // Verifica se o valor é numérico e está dentro do intervalo permitido
+     if (!is_numeric($dados['valor']) || $dados['valor'] < 0 || $dados['valor'] > 9999.99) {
+        throw new Exception("O valor informado está fora do intervalo permitido.");
+    }
+
     $insert = "INSERT INTO produto (titulo, descricao, valor) VALUES (:titulo, :descricao, :valor)";
     $stmt = $conexao->prepare($insert);
     $stmt->bindValue(':titulo', $dados['titulo']);
@@ -92,7 +97,12 @@ function adicionarProdutos($dados)
     $stmt->bindValue(':valor', $dados['valor']);
     $stmt->execute();
 
-    return $conexao->lastInsertId();
+    try {
+        $stmt->execute();
+        return $conexao->lastInsertId();
+    } catch (PDOException $e) {
+        throw new Exception("Erro ao adicionar produto: " . $e->getMessage());
+    }
 }
 
 // Função para buscar um produto pelo ID

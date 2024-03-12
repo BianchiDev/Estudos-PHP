@@ -1,6 +1,6 @@
 <?php
-
 include('_include/_header.php');
+include('_include/_nav.php');
 
 getPagina();
 

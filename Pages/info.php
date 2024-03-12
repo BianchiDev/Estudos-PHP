@@ -1,2 +1,5 @@
-<?php
-phpinfo();
+<main class="container">
+    <?php
+    phpinfo();
+    ?>
+</main>
