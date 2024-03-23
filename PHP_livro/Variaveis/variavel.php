@@ -6,5 +6,11 @@ pelo caractere cifrão($) -->
 <?php
 $nome = "João";
 $Sobremone = "da Silva";
-echo "$Sobremone, $nome";
+echo "$Sobremone, $nome" . "\n";
+
+$a = 5;
+$b = $a;
+$b = 10;
+echo $b . "\n";
+echo $a . "\n";
 ?>
