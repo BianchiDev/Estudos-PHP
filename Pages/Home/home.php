@@ -1,22 +1,36 @@
 <main class="container">
-
+<style>
+    .menuBuscar {
+  display: flex;
+  justify-content:center; 
+    width: 80%;
+    margin: 2% auto 0;
+    padding: 1px; /* Ajuste conforme necessário */
+    border: 1px solid #0000; /* Cor escura para a borda */
+    border-radius: 5%; /* Borda arredondada */
+    box-sizing: border-box; /* Garante que a largura inclua a borda e o preenchimento */
+  }
+  .button{
+    color: black;
+  }
+</style>
     <!-- Formulário de Busca -->
- <div class="menuBuscar">
-    <form action="busca" method="GET" >
-        <input  type="text"
-                id="autocomplete-buscar"
-                class="autocomplete" 
-                name="busca" 
-                placeholder="Busca">
-        <!-- <button class="btn blue && z-depth-5">Pesquisar</button> -->
-    </form>
-</div>
+    <div>
+        <form action="busca" method="GET">
+            <div class="menuBuscar">
+                <fieldset class="menuBuscar">
+                    <input type="text" id="autocomplete-buscar" class="autocomplete" name="busca" placeholder="Busca">
+                    <!-- <button class="btn blue && z-depth-5">Pesquisar</button> -->
+                </fieldset>
+            </form>
+            </div>
+    </div>
 
     <div class="card && z-depth-5">
-    
-         <!-- Lista de Produtos -->
-    <h2>Lista de Produtos</h2>
-    <div class="chip">produto</div>
+
+        <!-- Lista de Produtos -->
+        <h2>Lista de Produtos</h2>
+        <div class="chip">produto</div>
         <table>
             <thead>
                 <tr>
@@ -34,7 +48,7 @@
                         <td><?php echo "R$" . number_format($produto['valor'], 2, ",", ".") ?></td>
                         <td>
                             <!-- Links de Edição e Exclusão -->
-                            <a class="btn orange && z-depth-5" href="/produto/editar?id=<?php echo $produto['id'] ?>">Editar</a>
+                            <a class="btn orange && z-depth-5"  href="/produto/editar?id=<?php echo $produto['id'] ?>">Editar</a>
                             <a class="btn red && z-depth-5" href="/produto/deletar?id=<?php echo $produto['id'] ?>">Deletar</a>
                         </td>
                     </tr>
@@ -57,26 +71,22 @@
     <?php endif; ?>
 
     <!-- Formulário para adicionar ou editar produtos -->
+    
     <form action="<?php echo (isset($editando) ? '/produto/salvar' : '/produto/adicionar'); ?>" method="post">
         <?php if (isset($editando)) : ?>
             <!-- Input oculto para armazenar o ID do produto sendo editado -->
             <input type="hidden" name="id" value="<?php echo $produtoEdit['id'] ?>">
         <?php endif; ?>
         <!-- Campos de entrada -->
-        <input  type="text" 
-                name="titulo" 
-                placeholder="Título" 
-                value="<?php echo (isset($produtoEdit['titulo']) ? $produtoEdit['titulo'] : ''); ?>">
-        
-        <input  type="text" 
-                name="descricao" 
-                placeholder="Descrição" 
-                value="<?php echo (isset($produtoEdit['descricao']) ? $produtoEdit['descricao'] : ''); ?>">
-        
-        <input  type="text" 
-                name="valor" 
-                placeholder="Valor R$" 
-                value="<?php echo (isset($produtoEdit['valor']) ? $produtoEdit['valor'] : ''); ?>">
+        <fieldset class="menuBuscar">
+            <input type="text" name="titulo" placeholder="Título" value="<?php echo (isset($produtoEdit['titulo']) ? $produtoEdit['titulo'] : ''); ?>">
+        </fieldset>
+        <fieldset class="menuBuscar">
+            <input type="text" name="descricao" placeholder="Descrição" value="<?php echo (isset($produtoEdit['descricao']) ? $produtoEdit['descricao'] : ''); ?>">
+        </fieldset>
+        <fieldset class="menuBuscar">
+            <input type="text" name="valor" placeholder="Valor R$" value="<?php echo (isset($produtoEdit['valor']) ? $produtoEdit['valor'] : ''); ?>">
+        </fieldset>
         <!-- Botão de envio -->
         <button class="btn blue && z-depth-5"><?php echo (isset($editando) ? 'Atualizar' : 'Adicionar'); ?></button>
 
@@ -85,5 +95,5 @@
             <a class="btn orange" href="/home">Cancelar</a>
         <?php endif; ?>
     </form>
- 
+
 </main>

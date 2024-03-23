@@ -2,8 +2,9 @@
 include('config.php');
 include('users.php');
 include('produtos.php');
-include('db.php');
+include('./database/db.php');
 include('validacao.php');
+include('home.css');
 
 // Função para obter a página com base na URL e método HTTP
 function getPagina()

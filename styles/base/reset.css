@@ -1,0 +1,10 @@
+/* Importando estilos base */
+@import 'base/reset.css';
+@import 'base/typography.css';
+
+/* Importando estilos de componentes */
+@import 'components/header.css';
+@import 'components/button.css';
+
+/* Importando estilos utilitários */
+@import 'utilities/flexbox.css';

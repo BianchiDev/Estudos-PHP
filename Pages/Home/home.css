@@ -1,8 +1,13 @@
 .menuBuscar {
+  display: flex;
+  justify-content:center;
     width: 50%;
     margin: 2% auto 0;
     padding: 20px; /* Ajuste conforme necessário */
     border: 10px solid #000; /* Cor escura para a borda */
     border-radius: 5px; /* Borda arredondada */
     box-sizing: border-box; /* Garante que a largura inclua a borda e o preenchimento */
+  }
+  .button{
+    color: black;
   }
