@@ -5,7 +5,7 @@ $encotrar = 'roupa';
 $posicao = strpos($minha_string, $encotrar);
 if($posicao)
 {
-    echo "String encontrada na posição $posicao";
+    echo "\n" . "String encontrada na posição $posicao";
 }
 else
 {
