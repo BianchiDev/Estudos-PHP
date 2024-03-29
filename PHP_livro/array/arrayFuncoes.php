@@ -51,3 +51,36 @@ $a [3] = 'blue';
 $b = array_reverse($a,true);
 var_dump($b);
 ?>
+<?php
+//########################## array_merge ######################################
+//Mescla dois ou mais arrays. Um Array é adionado ao final do outro. O resultado é um novo  array. Se ambos tiverem conteúdo indexado
+//pela mesma chava, o segundo irá se sobrepor ao primeiro.
+
+$a =  array("verde","azul");
+$b = array("vermelho", "amarelo");
+$c = array_merge($a, $b);
+var_dump($c);
+?>
+<?php
+//########################## array_keys ######################################
+//Retorna as chaves (índices) de arrays. Se o segundo parâmentro for indicado, a funão retornará apenas índices que apontam para um
+//conteúdo igual ao parâmetro.
+
+$exemplo = array('cor'=> 'vermelho', 'volume' => 5,'animal' => 'cachorro');
+$indeces = array_keys($exemplo);
+print_r($indeces);
+?>
+<?php
+//########################## array_values ######################################
+//Retorna um array contendo os valores de outro array.
+
+    $a[0] =  'green';
+    $a[1] = 'yellow';
+    $a[2] = 'red';
+    $a[3] = 'blue';
+    $a[4] = 'gray';
+    $a[5] = 'white';
+    
+$b = array_slice($a, 2, 3);
+print_r($b)
+?>
