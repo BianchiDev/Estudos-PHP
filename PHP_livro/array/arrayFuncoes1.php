@@ -70,7 +70,7 @@ $exemplo = array('cor'=> 'vermelho', 'volume' => 5,'animal' => 'cachorro');
 $indeces = array_keys($exemplo);
 print_r($indeces);
 ?>
-<?php
+<!-- <?php
 //########################## array_values ######################################
 //Retorna um array contendo os valores de outro array.
 
@@ -83,4 +83,41 @@ print_r($indeces);
     
 $b = array_slice($a, 2, 3);
 print_r($b)
+?> -->
+<?php
+//########################## count ######################################
+//Retorna a quantidade de elementos de um array.
+
+$a = array('refrigenrante', 'cerveja','vodka', 'suco natural');
+// echo 'O array $a contém ' . count($a)  .  ' posições';
+
+//########################## in_array ######################################
+//Verifica se há um valor dentro do array.
+
+
+if(in_array('cerveja-1',$a)){
+
+ echo  'Cerveja encontrada';
+
+ }
+  else if(in_array('refrigerante-2',$a)){
+
+     echo 'refrigerante encontrado';
+
+  }else if(in_array('vodka-3',$a)){ 
+
+     echo 'Vodka encontrada';
+
+  }else if(in_array('suco natural',$a)){
+
+      echo 'Suco natural encontrado';
+  }else{
+     echo  'Nada foi encontrado';
+ }
+
+ //########################## sort ######################################
+//Ordena um arrey pelo seu valor, Não mantendo a associação de índice  
+$a1 = array('refrigenrante', 'cerveja','vodka', 'suco natural');
+sort($a1);
+print_r($a1);
 ?>
