@@ -6,7 +6,8 @@ em vez do objeto na posição 0 do array. -->
 // Exemplo chamada simples
 function minhaFuncao()
 {
-    echo "Minha função! \n";
+    echo "\n";
+    echo "Minha função!" . "\n";
 }
 
 call_user_func('minhafuncao');
@@ -17,6 +18,7 @@ class minhaClasse
 {
      function MeuMetodo()
      {
+        echo "\n";
         echo "Meu método! \n"; 
      }
 
