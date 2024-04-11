@@ -6,26 +6,27 @@ em vez do objeto na posição 0 do array. -->
 // Exemplo chamada simples
 function minhaFuncao()
 {
-    echo "\n";
     echo "Minha função!" . "\n";
 }
 
-call_user_func('minhafuncao');
+echo "Saída da chamada simples:\n";
+call_user_func('minhaFuncao');
 
 // declaração de classe
-
-class minhaClasse
+class MinhaClasse
 {
-     function MeuMetodo()
+     static function meuMetodo()
      {
-        echo "\n";
         echo "Meu método! \n"; 
      }
 
 }
-//chama de método estático
-call_user_func(array('MinhaClasse', 'MeuMetodo'));
+
+echo "\nSaída da chamada de método estático:\n";
+call_user_func(array('MinhaClasse', 'meuMetodo'));
 
 //chama de método
-$obj = new minhaClasse();
-call_user_func(array($obj, 'MeuMetodo'));
+$obj = new MinhaClasse();
+echo "\nSaída da chamada de método de objeto:\n";
+call_user_func(array($obj, 'meuMetodo'));
+?>
