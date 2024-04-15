@@ -1,19 +1,4 @@
 <main class="container">
-<style>
-    .menuBuscar {
-  display: flex;
-  justify-content:center; 
-    width: 80%;
-    margin: 2% auto 0;
-    padding: 1px; /* Ajuste conforme necessário */
-    border: 1px solid #0000; /* Cor escura para a borda */
-    border-radius: 5%; /* Borda arredondada */
-    box-sizing: border-box; /* Garante que a largura inclua a borda e o preenchimento */
-  }
-  .button{
-    color: black;
-  }
-</style>
     <!-- Formulário de Busca -->
     <div>
         <form action="busca" method="GET">

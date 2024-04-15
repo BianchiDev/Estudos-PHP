@@ -1,5 +1,5 @@
 <?php
-include './CasseConta.php';
+include './ClasseConta.php';
 include './ClassePessoa.php';
 
 #Criação do objeto $carlos
@@ -25,7 +25,7 @@ $carlos->Envelhecer(1);
 echo"{$carlos->Nome} possui {$carlos->Idade} anos \n";
 
 #Criação do Objeto $conta_carlos
-$conta_carlos = new Conta(
+$conta_carlos = new Conta_a(
     6677,
     "CC.1234.56",
     "10/04/24",
@@ -36,3 +36,9 @@ $conta_carlos = new Conta(
 
 echo "\n";
 echo "Manipulando a conta de : {$conta_carlos->Titular->Nome}: \n";
+
+echo "O saldo altual é R\$ {$conta_carlos->ObterSaldo()} \n";
+$conta_carlos->Deposito(20);
+echo "O saldo altual é R\$ {$conta_carlos->ObterSaldo()} \n";
+$conta_carlos->Retirar(10);
+echo "O saldo altual é R\$ {$conta_carlos->ObterSaldo()} \n";
