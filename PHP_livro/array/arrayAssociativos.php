@@ -1,19 +1,19 @@
 <!-- 
-    Os array no PHP são assiciativos pois contêm um chave de acesso para cada posição. 
+    Os array no PHP são associativos pois contêm um chave de acesso para cada posição. 
 Para criar um array, pode-se utilizar a função array([chave =>] valor,...). 
 -->
 
 <?php
 $cores = array('vermelho' => 'FF0000', 'azul' => '0000FF', 'verde' => '00FF00');
 
-// Outra forma de criar um array associativ é simplesmente adicionando-lhe valores com a seguinte sintaxe:
+// Outra forma de criar um array associativo é simplesmente adicionando-lhe valores com a seguinte sintaxe:
 
 $pessoa['name'] = 'Maria da Silva';
 $pessoa['rua'] = 'São João';
 $pessoa['bairro'] = 'Cidade Alta';
 $pessoa['cidade'] = 'Porto Alegre';
 
-// De qualquer forma, para acessar o array, basta indicar a sua chave entre colchetes:
+// De qualquer forma, para acessar o array, basta indicar a sua chave entre cochetes:
 
     print "\n" . "############## Valor das corres #################" . "\n";
 
