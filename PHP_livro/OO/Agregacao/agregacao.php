@@ -9,26 +9,26 @@ $produto4 = new Produto;
 
 $produto1->Codigo = 1;
 $produto1->Descricao = 'Ameixa';
-$produto1->Preco = 1.24;
+$produto1->Preco = 1.40;
 
-$produto1->Codigo = 2;
-$produto1->Descricao = 'Morango';
-$produto1->Preco = 1.24;
+$produto2->Codigo = 2;
+$produto2->Descricao = 'Morango';
+$produto2->Preco = 2.24;
 
-$produto1->Codigo = 3;
-$produto1->Descricao = 'Abacaxi';
-$produto1->Preco = 2.86;
+$produto3->Codigo = 3;
+$produto3->Descricao = 'Abacaxi';
+$produto3->Preco = 2.86;
 
-$produto1->Codigo = 4;
-$produto1->Descricao = 'Laranja';
-$produto1->Preco = 1.14;
+$produto4->Codigo = 4;
+$produto4->Descricao = 'Laranja';
+$produto4->Preco = 1.14;
 
 $cesta = new Cesta;
-$cesta->AdicionarItem($produto1);
-$cesta->AdicionarItem($produto2);
-$cesta->AdicionarItem($produto3);
 $cesta->AdicionarItem($produto4);
+$cesta->AdicionarItem($produto3);
+$cesta->AdicionarItem($produto2);
+$cesta->AdicionarItem($produto1);
 
-echo $cesta->CaculaTotal();
+echo $cesta->CalculaTotal();
 echo "\n";
-echo $cesta->ExibeLista();
+ $cesta->ExibeLista();

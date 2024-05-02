@@ -18,12 +18,12 @@ Class Cesta
         }
     }
     #Calcular o valor total da cesta
-    function CaculaTotal()
+     function CalculaTotal()
     {
-        $total = 0;
+        $total = 0; // Inicializa o total antes do loop
         foreach($this->itens as $item)
         {
-            $total += $item->Preco;
+            $total += $item->Preco; // Soma o preço de cada item ao total
         }
         return 'R$' . $total;
     }
