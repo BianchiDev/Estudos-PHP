@@ -23,7 +23,7 @@ $indice = array_rand($dadosCompletos);
 echo "$indice = $dadosCompletos[$indice]";
 echo '<br>';
 echo "{$dadosCompletos['idade']}";
-echo " ${dadosCompletos['idade']}";
+//echo " ${dadosCompletos['idade']}";
 
 unset($dadosCompletos["nome"]);
 echo '<br>';

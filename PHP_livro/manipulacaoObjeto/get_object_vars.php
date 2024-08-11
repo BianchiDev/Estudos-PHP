@@ -1,5 +1,5 @@
 <!-- get_object_vars retorna um vetor com os nomes e conteúdos das propriedades de um objeto. 
-São Valores dinâmicos que se alteram de acordo com o ciclo de vidad do objeto. -->
+São Valores dinâmicos que se alteram de acordo com o ciclo de vida do objeto. -->
 <?php
 class Funcionario{
     var $Codigo;

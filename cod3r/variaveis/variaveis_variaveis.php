@@ -3,7 +3,7 @@
 <?php
 $a = 'valorA';
 $$a = 'valorAA';
-echo "$a {$$a} ${$a} $valorA";
+//echo "$a {$$a} ${$a} $valorA";
 
 echo '<br>';
 $epa = 'opa';

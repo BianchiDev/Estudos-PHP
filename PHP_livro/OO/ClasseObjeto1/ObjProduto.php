@@ -11,6 +11,7 @@ include_once './ClasseProduto.php';
 
 $produt1  = new Produto;
 $produt2  = new Produto;
+$produt3  = new Produto;
 
 // Atribuir valores 
 $produt1->Codigo = 4001;
@@ -19,6 +20,10 @@ $produt1->Descricao = 'CD - The Best of Eric Clapton';
 $produt2->Codigo = 4002;
 $produt2->Descricao = 'CD -The Eagles Hotel California';
 
+$produt3->Codigo = 2001;
+$produt3->Preco = 2000;
+
 //Imprime informações de etiqueta
-$produt1->ImprimeEtiqueta();
-$produt2->ImprimeEtiqueta();
+$produt1->ImprimeEtiqueta() . "\n";
+$produt2->ImprimeEtiqueta() . "\n";
+$produt3->ImprimeEtiqueta();

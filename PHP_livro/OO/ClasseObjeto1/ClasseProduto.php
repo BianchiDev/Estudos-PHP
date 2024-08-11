@@ -14,8 +14,22 @@ class Produto
 
     function ImprimeEtiqueta()
     {
-        print 'Codigo: ' . $this->Codigo .  "\n";
-        print 'Descricao: ' . $this->Descricao .  "\n";
+        if($this->Codigo != 0 || $this->Codigo != null){
+            print  "\n" . 'Codigo: ' . $this->Codigo .  "\n";
+        }else{
+            print  "\n" .'Código: não informado!!!' .  "\n";
+        }
+        if($this->Descricao !='' || $this->Descricao != null){
+            print 'Descricao: ' . $this->Descricao .  "\n";
+        }else{
+            print 'Descrição: não informada!!!' .  "\n";
+        }
+        
+        if($this->Preco != 0 || $this->Preco != null){
+            print  'Preço: ' . $this->Preco .  "\n";
+        }else{
+            print 'Preço: não informado!!!'  .  "\n";
+        }
     }
 }
 ?>
